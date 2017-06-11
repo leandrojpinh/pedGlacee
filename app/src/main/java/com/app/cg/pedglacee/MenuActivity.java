@@ -14,7 +14,7 @@ import com.app.cg.pedglacee.adaptadores.MenuGarcomAdapter;
 public class MenuActivity extends AppCompatActivity {
 
     private String[] lDesc = {"Novo Pedido", "Meus Pedidos"};
-    private int [] lImgs = {R.drawable.ic_novo_pedido, R.drawable.ic_action_name};
+    private int [] lImgs = {R.drawable.ic_add, R.drawable.ic_action_name};
     private ListView lvMenu;
 
     @Override
