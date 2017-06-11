@@ -16,16 +16,19 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".LoginActivity"
-            android:label="@string/atv_Login">
-            <!--<intent-filter>
+            android:label="@string/atv_login">
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
         <activity
             android:name=".MenuActivity"
-            android:label="@string/atv_Menu">
+            android:label="@string/atv_menu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,9 +37,9 @@
         </activity>
         <activity
             android:name=".MesasActivity"
-            android:label="@string/atv_Mesas">
-
-        </activity>
+            android:label="@string/atv_mesas" />
+        <activity android:name=".NovoPedidoActivity" android:label="@string/atv_novo_pedido" />
+        <activity android:name=".MeusPedidosActivity" android:label="@string/atv_meus_pedidos"/>
     </application>
 
 </manifest>

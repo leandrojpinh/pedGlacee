@@ -1,9 +1,11 @@
 <resources>
     <string name="app_name">pedGlacee</string>
     <!-- Labels do login -->
-    <string name="atv_Login">Autenticação</string>
-    <string name="atv_Menu">Menu</string>
-    <string name="atv_Mesas">Mesas</string>
+    <string name="atv_login">Autenticação</string>
+    <string name="atv_menu">Menu</string>
+    <string name="atv_mesas">Mesas</string>
+    <string name="atv_novo_pedido">Novo Pedido</string>
+    <string name="atv_meus_pedidos">Meus Pedidos</string>
 
     <!-- Labels Menu garçom -->
     <string name="txt_novo_pedido">Novo Pedido</string>

@@ -1,6 +1,7 @@
 package com.app.cg.pedglacee;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ public class MenuActivity extends AppCompatActivity {
     private String[] lDesc = {"Novo Pedido", "Meus Pedidos"};
     private int [] lImgs = {R.drawable.ic_add, R.drawable.ic_action_name};
     private ListView lvMenu;
+    Intent i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,18 @@ public class MenuActivity extends AppCompatActivity {
         lvMenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), lvMenu.getItemIdAtPosition(position) + "", Toast.LENGTH_SHORT).show();
+                switch (position) {
+                    case 0:
+                        i = new Intent(getApplicationContext(), MesasActivity.class);
+                        startActivity(i);
+                        break;
+                    case 1:
+                        i = new Intent(getApplicationContext(), MeusPedidosActivity.class);
+                        startActivity(i);
+                        break;
+                    default:
+                        break;
+                }
             }
         });
     }
