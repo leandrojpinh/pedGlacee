@@ -1,10 +1,13 @@
 package com.app.cg.pedglacee;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.app.cg.pedglacee.adaptadores.MeusPedidosAdapter;
@@ -24,6 +27,7 @@ public class MeusPedidosActivity extends AppCompatActivity {
     private MeusPedidosAdapter adapter;
     private List<BasePedido> bBasePedido;
     private BasePedido pedido;
+    private Intent iDetalhe;
     private static final String TAG = "MeusPedidosActivity";
 
     @Override
@@ -127,11 +131,14 @@ public class MeusPedidosActivity extends AppCompatActivity {
             }
         });
 
-        /*lvMeusPedidos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lvMeusPedidos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), "Item selecionado " +view.getTag(), Toast.LENGTH_LONG);
+                iDetalhe = new Intent(getApplicationContext(), DetalhePedidoActivity.class);
+                iDetalhe.putExtra("prato", bBasePedido.get(position).getsPrato());
+                iDetalhe.putExtra("comanda", bBasePedido.get(position).getsComanda());
+                startActivity(iDetalhe);
             }
-        });*/
+        });
     }
 }

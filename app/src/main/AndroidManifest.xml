@@ -38,8 +38,14 @@
         <activity
             android:name=".MesasActivity"
             android:label="@string/atv_mesas" />
-        <activity android:name=".NovoPedidoActivity" android:label="@string/atv_novo_pedido" />
-        <activity android:name=".MeusPedidosActivity" android:label="@string/atv_meus_pedidos"/>
+        <activity
+            android:name=".NovoPedidoActivity"
+            android:label="@string/atv_novo_pedido" />
+        <activity
+            android:name=".MeusPedidosActivity"
+            android:label="@string/atv_meus_pedidos" />
+        <activity android:name=".DetalhePedidoActivity"
+            android:label="@string/atv_comanda"></activity>
     </application>
 
 </manifest>
