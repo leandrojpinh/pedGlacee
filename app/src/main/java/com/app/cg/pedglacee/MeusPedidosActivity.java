@@ -59,32 +59,26 @@ public class MeusPedidosActivity extends AppCompatActivity {
             @Override
             public void create(SwipeMenu menu) {
                 // create "preparacao" item
-                SwipeMenuItem preparacaoItem = new SwipeMenuItem(getApplicationContext());
+                SwipeMenuItem verComanda = new SwipeMenuItem(getApplicationContext());
                 // set item background
-                preparacaoItem.setBackground(new ColorDrawable(Color.rgb(0xF5, 0xAB, 0x35)));
+                verComanda.setBackground(new ColorDrawable(Color.rgb(0x22, 0xA7, 0xF0)));
                 // set item width
-                preparacaoItem.setWidth(170);
+                verComanda.setWidth(150);
                 // set item title
                 //analiseItem.setTitle("Open");
                 // set item title fontsize
                 //analiseItem.setTitleSize(18);
                 // set item title font color
                 //analiseItem.setTitleColor(Color.WHITE);
-                preparacaoItem.setIcon(R.drawable.ic_preparacao);
+                verComanda.setIcon(R.drawable.ic_ver_comanda);
                 // add to menu
-                menu.addMenuItem(preparacaoItem);
+                menu.addMenuItem(verComanda);
 
                 SwipeMenuItem encaminhadoItem = new SwipeMenuItem(getApplicationContext());
-                encaminhadoItem.setBackground(new ColorDrawable(Color.rgb(0x22, 0xA7, 0xF0)));
-                encaminhadoItem.setWidth(170);
-                encaminhadoItem.setIcon(R.drawable.ic_encaminhado);
+                encaminhadoItem.setBackground(new ColorDrawable(Color.rgb(0xCF, 0x00, 0x0F)));
+                encaminhadoItem.setWidth(150);
+                encaminhadoItem.setIcon(R.drawable.ic_delete);
                 menu.addMenuItem(encaminhadoItem);
-
-                SwipeMenuItem entregueItem = new SwipeMenuItem(getApplicationContext());
-                entregueItem.setBackground(new ColorDrawable(Color.rgb(0x2E, 0xCC, 0x71)));
-                entregueItem.setWidth(170);
-                entregueItem.setIcon(R.drawable.ic_entregue);
-                menu.addMenuItem(entregueItem);
 
                 /*// create "delete" item
                 SwipeMenuItem deleteItem = new SwipeMenuItem(getApplicationContext());
@@ -107,37 +101,19 @@ public class MeusPedidosActivity extends AppCompatActivity {
                 switch (index) {
                     case 0:
                         // preparacao
-                        Log.d(TAG, "onMenuItemClick: clicked item " + index);
-                        pedido = bBasePedido.get(position);
-                        pedido.setsStatus("Pedido em preparação");
-                        bBasePedido.set(position, pedido);
-                        adapter.notifyDataSetChanged();
-                        lvMeusPedidos.setAdapter(adapter);
-                        Toast.makeText(getApplicationContext(), "Pedido em preparação", Toast.LENGTH_SHORT).show();
+                        iDetalhe = new Intent(getApplicationContext(), DetalhePedidoActivity.class);
+                        iDetalhe.putExtra("prato", bBasePedido.get(position).getsPrato());
+                        iDetalhe.putExtra("comanda", bBasePedido.get(position).getsComanda());
+                        startActivity(iDetalhe);
                         break;
                     case 1:
                         // encaminhado
                         Log.d(TAG, "onMenuItemClick: clicked item " + index);
-                        Toast.makeText(getApplicationContext(), "Pedido encaminhado", Toast.LENGTH_SHORT).show();
-                        break;
-                    case 2:
-                        // entregue
-                        Log.d(TAG, "onMenuItemClick: clicked item " + index);
-                        Toast.makeText(getApplicationContext(), "Pedido entregue", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Removendo pedido...", Toast.LENGTH_SHORT).show();
                         break;
                 }
                 // false : close the menu; true : not close the menu
                 return false;
-            }
-        });
-
-        lvMeusPedidos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                iDetalhe = new Intent(getApplicationContext(), DetalhePedidoActivity.class);
-                iDetalhe.putExtra("prato", bBasePedido.get(position).getsPrato());
-                iDetalhe.putExtra("comanda", bBasePedido.get(position).getsComanda());
-                startActivity(iDetalhe);
             }
         });
     }
