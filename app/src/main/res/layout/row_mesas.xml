@@ -15,25 +15,25 @@
             android:id="@+id/txtMesa"
             android:layout_width="149dp"
             android:layout_height="match_parent"
+            android:layout_weight="0.24"
+            android:paddingBottom="7dp"
+            android:paddingTop="7dp"
             android:text="001"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimary"
-            android:textSize="30sp"
-            android:paddingTop="7dp"
-            android:paddingBottom="7dp"
-            android:layout_weight="0.24" />
+            android:textColor="@color/colorBackground"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/txtQtdPessoas"
             android:layout_width="212dp"
             android:layout_height="match_parent"
+            android:layout_weight="0.76"
+            android:paddingBottom="7dp"
+            android:paddingTop="7dp"
             android:text="0 Pessoas"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimary"
-            android:textSize="30sp"
-            android:paddingTop="7dp"
-            android:paddingBottom="7dp"
-            android:layout_weight="0.76" />
+            android:textColor="@color/colorBackground"
+            android:textSize="30sp" />
 
     </LinearLayout>
 </LinearLayout>

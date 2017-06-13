@@ -24,4 +24,22 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <string-array name="pratos">
+        <item>Assado de Panela</item>
+        <item>Moqueca de arraia</item>
+        <item>Frango ao molho</item>
+        <item>Cupim ao forno</item>
+        <item>Bife ao molho</item>
+    </string-array>
+
+    <string-array name="sucos">
+        <item>Nenhum</item>
+        <item>Acerola</item>
+        <item>Abacaxi</item>
+        <item>Morango</item>
+        <item>Cajá</item>
+        <item>Limão</item>
+    </string-array>
+
 </resources>

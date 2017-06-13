@@ -1,11 +1,13 @@
 package com.app.cg.pedglacee;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.app.cg.pedglacee.adaptadores.MesaAdapter;
 import com.app.cg.pedglacee.classes.Mesa;
@@ -51,9 +53,19 @@ public class MesasActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //Toast.makeText(getApplicationContext(), "Item selecionado " +view.getTag(), Toast.LENGTH_LONG).show();
-                Intent i = new Intent(getApplicationContext(), NovoPedidoActivity.class);
-                i.putExtra("edtMesa", lMesas.get(position).getsMesa());
-                startActivity(i);
+                Mesa mesa = lMesas.get(position);
+
+
+                if(mesa.getiQtdPessoas() == 4) {
+                    Toast.makeText(getApplicationContext(), "A Messa: " + lMesas.get(position).getsMesa() + " está Cheia!", Toast.LENGTH_SHORT).show();
+                } else {
+                    if(mesa.getiQtdPessoas() >= 1)
+                        Toast.makeText(getApplicationContext(), "A Messa: " + lMesas.get(position).getsMesa() + " contém " + mesa.getiQtdPessoas() + " pessoas!", Toast.LENGTH_SHORT).show();
+
+                    Intent i = new Intent(getApplicationContext(), NovoPedidoActivity.class);
+                    i.putExtra("edtMesa", lMesas.get(position).getsMesa());
+                    startActivity(i);
+                }
             }
         });
     }
