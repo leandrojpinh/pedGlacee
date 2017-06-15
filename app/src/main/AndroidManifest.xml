@@ -44,8 +44,12 @@
         <activity
             android:name=".MeusPedidosActivity"
             android:label="@string/atv_meus_pedidos" />
-        <activity android:name=".DetalhePedidoActivity"
-            android:label="@string/atv_comanda"></activity>
+        <activity
+            android:name=".DetalhePedidoActivity"
+            android:label="@string/atv_comanda" />
+        <activity
+            android:name=".CadastrosActivity"
+            android:label="@string/atv_cadastros"></activity>
     </application>
 
 </manifest>
