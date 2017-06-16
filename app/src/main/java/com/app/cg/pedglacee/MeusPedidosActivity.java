@@ -50,7 +50,6 @@ public class MeusPedidosActivity extends AppCompatActivity {
         lvMeusPedidos = (SwipeMenuListView) findViewById(R.id.lvMeusPedidos);
         bBasePedido = new ArrayList<>();
         try {
-
             //Verificação da rede
             ConnectivityManager connMgr = (ConnectivityManager)
                     getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -60,26 +59,12 @@ public class MeusPedidosActivity extends AppCompatActivity {
                 url = "http://apppedglace.xyz/login/cadastro/pedido/lista_pedidos.php";
                 parametros = "usuario=" + sIdUsuario;
                 new MeusPedidosActivity.SolicitaDados().execute(url);
-
             } else {
                 Toast.makeText(getApplicationContext(), "Você não está conectado à rede", Toast.LENGTH_LONG).show();
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        //pode adicionar de um banco tbm
-/*
-        bBasePedido.add(new BasePedido("Assado de Panela", "00245", "001", "Em análise", 1));
-        bBasePedido.add(new BasePedido("Moqueca de arraia", "00246", "001", "Em preparação", 2));
-        bBasePedido.add(new BasePedido("Frango ao molho", "00247", "002", "Encaminhado", 3));
-        bBasePedido.add(new BasePedido("Assado de Panela", "00248", "002", "Em análise", 4));
-        bBasePedido.add(new BasePedido("Cupim ao forno", "00249", "002", "Entregue", 5));
-        bBasePedido.add(new BasePedido("Cupim ao forno", "00250", "003", "Entregue", 6));
-        bBasePedido.add(new BasePedido("Assado de panela", "00251", "003", "Entregue", 7));
-        bBasePedido.add(new BasePedido("Bife ao molho", "00252", "004", "Encaminhado", 8));
-        bBasePedido.add(new BasePedido("Moqueca de arraia", "00253", "004", "Encaminhado", 9));
-        bBasePedido.add(new BasePedido("Moqueca de arraia", "00254", "004", "Encaminhado", 10));*/
 
         SwipeMenuCreator creator = new SwipeMenuCreator() {
 
@@ -146,7 +131,13 @@ public class MeusPedidosActivity extends AppCompatActivity {
                     String comanda = jObj.getString("idpedidos");
                     String refeicao = jObj.getString("descricao");
                     String mesa = jObj.getString("codigo");
+
+                    //N -> Novo Pedido | E -> Em preparação | P -> Pronto | C -> Concluído
                     String status = jObj.getString("status");
+                    if(status.equals("N")) status = "Novo Pedido";
+                    else if(status.equals("E")) status = "Em Preparação";
+                    else if(status.equals("P")) status = "Pronto";
+                    else if(status.equals("C")) status = "Concluído";
 
                     bBasePedido.add(new BasePedido(refeicao, comanda, mesa, status, Integer.parseInt(comanda)));
 
