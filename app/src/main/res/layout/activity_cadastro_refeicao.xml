@@ -9,9 +9,11 @@
 
     <EditText
         android:id="@+id/etDescricao"
-        android:layout_width="450dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignStart="@+id/textView"
         android:layout_below="@+id/textView"
         android:backgroundTint="@android:color/darker_gray"
@@ -50,7 +52,7 @@
 
     <EditText
         android:id="@+id/etTipoProduto"
-        android:layout_width="450dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/etDescricao"
         android:layout_alignStart="@+id/etDescricao"
@@ -60,7 +62,9 @@
         android:hint="Digite aqui..."
         android:inputType="textPersonName"
         android:textColor="@android:color/black"
-        android:textColorHint="@android:color/darker_gray" />
+        android:textColorHint="@android:color/darker_gray"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/textView3"
@@ -90,11 +94,10 @@
 
     <Button
         android:id="@+id/btAdicionar"
-        android:layout_width="450dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/etValor"
-        android:layout_alignStart="@+id/etValor"
         android:layout_below="@+id/etValor"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="54dp"
         android:background="@android:color/holo_red_dark"
         android:backgroundTintMode="src_atop"
@@ -105,15 +108,15 @@
 
     <Button
         android:id="@+id/btLimpar"
-        android:layout_width="450dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btAdicionar"
+        android:layout_alignStart="@+id/btAdicionar"
+        android:layout_below="@+id/btAdicionar"
         android:layout_marginTop="16dp"
         android:background="@android:color/holo_red_dark"
         android:onClick="limpar"
         android:text="@string/btLimpar"
-        android:textSize="18sp"
-        android:layout_below="@+id/btAdicionar"
-        android:layout_alignLeft="@+id/btAdicionar"
-        android:layout_alignStart="@+id/btAdicionar" />
+        android:textSize="18sp" />
 
 </RelativeLayout>
