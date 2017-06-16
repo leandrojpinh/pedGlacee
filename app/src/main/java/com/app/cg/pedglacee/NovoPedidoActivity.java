@@ -100,6 +100,7 @@ public class NovoPedidoActivity extends AppCompatActivity {
             if(resultado.contains("pedido_ok")) {
                 Toast.makeText(getApplicationContext(), "Pedido realizado. [Novo Pedido]", Toast.LENGTH_LONG).show();
                 Intent i = new Intent(NovoPedidoActivity.this, MeusPedidosActivity.class);
+                i.putExtra("idusuario", sIdUsuario);
                 startActivity(i);
             } else {
                 Toast.makeText(getApplicationContext(), "Erro ao inserir pedido.", Toast.LENGTH_LONG).show();
