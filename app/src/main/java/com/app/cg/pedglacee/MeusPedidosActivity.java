@@ -29,6 +29,7 @@ public class MeusPedidosActivity extends AppCompatActivity {
     private BasePedido pedido;
     private Intent iDetalhe;
     private static final String TAG = "MeusPedidosActivity";
+    String url = "", parametros = "", sIdUsuario = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
