@@ -74,7 +74,7 @@ public class LoginActivity extends AppCompatActivity { //implements LoaderCallba
                     if(login.isEmpty() || senha.isEmpty()) {
                         Toast.makeText(getApplicationContext(), "Nenhum campo deve estar vazio.", Toast.LENGTH_LONG).show();
                     } else {
-                        url = "http://localhost:80/login/logar.php";
+                        url = "http://apppedglace.xyz/login/logar.php";
                         parametros = "login=" + login + "&senha=" + senha;
                         new SolicitaDados().execute(url);
                     }
