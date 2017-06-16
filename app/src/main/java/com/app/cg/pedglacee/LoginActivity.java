@@ -33,7 +33,6 @@ public class LoginActivity extends AppCompatActivity { //implements LoaderCallba
         btnLogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 //Verificação da rede
                 ConnectivityManager connMgr = (ConnectivityManager)
                         getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -73,7 +72,10 @@ public class LoginActivity extends AppCompatActivity { //implements LoaderCallba
         @Override
         protected void onPostExecute(String resultado) {
             if(resultado.contains("login_ok")) {
+                String dados[] = resultado.split(",");
                 Intent i = new Intent(LoginActivity.this, NovoPedidoActivity.class);
+                i.putExtra("idusuario", dados[1]+"");
+                i.putExtra("idmesa", 1+"");
                 startActivity(i);
             } else {
                 Toast.makeText(getApplicationContext(), "Usuário ou Senha estão incorretos.", Toast.LENGTH_LONG).show();
