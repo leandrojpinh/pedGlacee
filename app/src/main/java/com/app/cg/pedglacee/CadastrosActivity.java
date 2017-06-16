@@ -30,18 +30,14 @@ public class CadastrosActivity extends AppCompatActivity {
         lvMenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                /*switch (position) {
+                switch (position) {
                     case 0:
-                        i = new Intent(getApplicationContext(), MesasActivity.class);
-                        startActivity(i);
-                        break;
-                    case 1:
-                        i = new Intent(getApplicationContext(), MeusPedidosActivity.class);
+                        i = new Intent(getApplicationContext(), CadastroRefeicao.class);
                         startActivity(i);
                         break;
                     default:
                         break;
-                }*/
+                }
             }
         });
     }

@@ -44,4 +44,10 @@
         <item>Limão</item>
     </string-array>
 
+    <!-- Strings do CadastroRefeição -->
+    <string name="tvDescricao">Descrição:</string>
+    <string name="tvTipoProduto">Tipo de Produto:</string>
+    <string name="tvValor">Valor:</string>
+    <string name="btAdicionar">Adicionar</string>
+    <string name="btLimpar">Limpar</string>
 </resources>

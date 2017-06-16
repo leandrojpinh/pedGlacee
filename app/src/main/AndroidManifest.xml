@@ -6,7 +6,8 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -49,7 +50,8 @@
             android:label="@string/atv_comanda" />
         <activity
             android:name=".CadastrosActivity"
-            android:label="@string/atv_cadastros"></activity>
+            android:label="@string/atv_cadastros" />
+        <activity android:name=".CadastroRefeicao"></activity>
     </application>
 
 </manifest>
