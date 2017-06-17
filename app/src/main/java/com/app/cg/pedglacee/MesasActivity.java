@@ -31,7 +31,7 @@ public class MesasActivity extends AppCompatActivity {
     //private SwipeMenuListView lvMeusPedidos;
     private MesaAdapter adapter;
     private List<Mesa> lMesas;
-    private Mesa oMesa;
+    //private Mesa oMesa;
     private ListView lvMesas;
     private String sIdUser = "";
     private static final String TAG = "MesasActivity";
@@ -55,8 +55,8 @@ public class MesasActivity extends AppCompatActivity {
 
             if(networkInfo != null && networkInfo.isConnected()) {
                 url = "http://apppedglace.xyz/login/cadastro/mesas/lista_mesas.php";
-                parametros = "usuario=" + sIdUser;
-                new MesasActivity.SolicitaDados().execute(url);
+               parametros = "usuario=" + sIdUser;
+               new MesasActivity.SolicitaDados().execute(url);
             } else {
                 Toast.makeText(getApplicationContext(), "Você não está conectado à rede", Toast.LENGTH_LONG).show();
             }
@@ -71,10 +71,10 @@ public class MesasActivity extends AppCompatActivity {
                 Mesa mesa = lMesas.get(position);
 
                 if(mesa.getiQtdPessoas() == 4) {
-                    Toast.makeText(getApplicationContext(), "A Messa: " + lMesas.get(position).getsMesa() + " está Cheia!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "A Mesa: " + lMesas.get(position).getsMesa() + " está Cheia!", Toast.LENGTH_SHORT).show();
                 } else {
                     if(mesa.getiQtdPessoas() >= 1)
-                        Toast.makeText(getApplicationContext(), "A Messa: " + lMesas.get(position).getsMesa() + " contém " + mesa.getiQtdPessoas() + " pessoas!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "A Mesa: " + lMesas.get(position).getsMesa() + " contém " + mesa.getiQtdPessoas() + " pessoas!", Toast.LENGTH_SHORT).show();
 
                     Intent i = new Intent(getApplicationContext(), NovoPedidoActivity.class);
                     i.putExtra("edtMesa", lMesas.get(position).getsMesa());

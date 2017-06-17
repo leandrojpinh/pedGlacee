@@ -12,10 +12,6 @@ import com.app.cg.pedglacee.classes.Mesa;
 
 import java.util.List;
 
-/**
- * Created by LEANDRO on 11/06/2017.
- */
-
 public class MesaAdapter extends BaseAdapter {
 
     private Context cContexto;

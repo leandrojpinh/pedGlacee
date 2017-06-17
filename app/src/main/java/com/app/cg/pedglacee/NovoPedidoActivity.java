@@ -2,7 +2,6 @@ package com.app.cg.pedglacee;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -16,10 +15,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.app.cg.pedglacee.classes.Prato;
+import com.app.cg.pedglacee.adaptadores.SpinnerAdapter;
 import com.app.cg.pedglacee.conexao_network.Conexao;
-
-import java.util.ArrayList;
 
 public class NovoPedidoActivity extends AppCompatActivity {
 
@@ -39,15 +36,14 @@ public class NovoPedidoActivity extends AppCompatActivity {
 
         InicializarComponentes();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.pratos));
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
+                R.layout.simple_list_spinner, getResources().getStringArray(R.array.pratos));
+        adapter.setDropDownViewResource(R.layout.row_spinner);
 
-        spnPrato.setAdapter(adapter);
 
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.sucos));
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spnPrato.setAdapter(new SpinnerAdapter(adapter, R.layout.spinner_prato, this));
+        spnSuco.setAdapter(new SpinnerAdapter(adapter, R.layout.spinner_suco, this));
 
-        spnSuco.setAdapter(adapter2);
         //Receber valores da listView
         i = getIntent();
         edtMesa.setText(i.getStringExtra("idmesa"));
@@ -63,8 +59,9 @@ public class NovoPedidoActivity extends AppCompatActivity {
 
                 if(networkInfo != null && networkInfo.isConnected()) {
                     String mesa = edtMesa.getText().toString();
-                    String prato = 1+"";//spnPrato.getSelectedItem().toString();
-                    //String suco = spnSuco.getSelectedItem().toString();
+                    String prato = 1+"";
+                    spnPrato.getSelectedItem().toString();
+                    String suco = spnSuco.getSelectedItem().toString();
                     String valor = txtValor.getText().toString();
 
                     if(mesa.isEmpty() || prato.isEmpty()|| valor.isEmpty()) {
