@@ -28,20 +28,12 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Comanda"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-
-                <TextView
                     android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Mesa"
+                    android:textAlignment="center"
                     android:textColor="@color/colorPrimary"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -53,16 +45,6 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/edtComanda"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:enabled="false"
-                    android:inputType="number"
-                    android:textColor="@color/colorPrimary" />
-
-                <EditText
                     android:id="@+id/edtMesa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -70,6 +52,7 @@
                     android:ems="10"
                     android:enabled="false"
                     android:inputType="number"
+                    android:textAlignment="center"
                     android:textColor="@color/colorPrimary" />
             </LinearLayout>
 
@@ -98,7 +81,7 @@
                 <Spinner
                     android:id="@+id/spnPrato"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorPrimary" />
             </LinearLayout>
@@ -128,7 +111,7 @@
                 <Spinner
                     android:id="@+id/spnSuco"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorPrimary" />
             </LinearLayout>
@@ -161,13 +144,13 @@
             <LinearLayout
                 android:id="@+id/linListView"
                 android:layout_width="match_parent"
-                android:layout_height="254dp"
+                android:layout_height="201dp"
                 android:orientation="horizontal">
 
                 <ListView
                     android:id="@+id/lvItens"
                     android:layout_width="match_parent"
-                    android:layout_height="251dp" />
+                    android:layout_height="193dp" />
             </LinearLayout>
 
             <RelativeLayout
@@ -206,15 +189,32 @@
 
                 <TextView
                     android:id="@+id/txtValor"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
+                    android:text="12"
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="24sp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toEndOf="@+id/txtTotalPed"
+                    android:layout_toRightOf="@+id/txtTotalPed"
+                    android:layout_below="@+id/txtTotalPed" />
+
+                <TextView
+                    android:id="@+id/txtRS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_alignLeft="@+id/txtTotalPed"
                     android:layout_alignParentBottom="true"
                     android:layout_alignStart="@+id/txtTotalPed"
-                    android:layout_below="@+id/txtTotalPed"
-                    android:text="12"
+                    android:text="R$"
+                    android:gravity="center"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:layout_toStartOf="@+id/txtValor"
+                    android:layout_alignRight="@+id/txtTotalPed"
+                    android:layout_alignEnd="@+id/txtTotalPed"
+                    android:layout_below="@+id/txtTotalPed" />
 
             </RelativeLayout>
 

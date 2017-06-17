@@ -53,9 +53,13 @@ public class MesasActivity extends AppCompatActivity {
                     getSystemService(Context.CONNECTIVITY_SERVICE);
             NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
+            //se tiver conectado
             if(networkInfo != null && networkInfo.isConnected()) {
+                //acessar a url abaixo
                 url = "http://apppedglace.xyz/login/cadastro/mesas/lista_mesas.php";
+                //com os parâmetros seguintes
                 parametros = "usuario=" + sIdUser;
+                //esse método vai nessa url
                 new MesasActivity.SolicitaDados().execute(url);
             } else {
                 Toast.makeText(getApplicationContext(), "Você não está conectado à rede", Toast.LENGTH_LONG).show();
@@ -91,11 +95,13 @@ public class MesasActivity extends AppCompatActivity {
     private class SolicitaDados extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
+            //aqui de fato ele vai na web; pela classe de conexao
             return Conexao.postDados(params[0], parametros);
         }
 
         @Override
         protected void onPostExecute(String resultado) {
+            //depois de conectar, executar e trouxer o resultado da busca ele vai tratar abaixo
             if(resultado.length() > 0) {
                 Toast.makeText(getApplicationContext(), "Carregando...", Toast.LENGTH_LONG).show();
 
@@ -105,6 +111,7 @@ public class MesasActivity extends AppCompatActivity {
 
                     lMesas.clear();
 
+                    //recebendo os dados da consulta
                     for(int i = 0; i < jArray.length(); i++) {
                         jObj = jArray.getJSONObject(i);
 
