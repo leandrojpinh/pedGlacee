@@ -8,11 +8,8 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.cg.pedglacee.conexao_network.Conexao;
@@ -21,7 +18,6 @@ public class CadastrarMesas extends AppCompatActivity {
 
 
     private Intent i;
-    private String sIdUsuario = "";
     String url = "", parametros = "";
     private EditText codigoMesa;
     private EditText capacidade;
@@ -34,8 +30,6 @@ public class CadastrarMesas extends AppCompatActivity {
         InicializarComponentes();
 
         i = getIntent();
-        codigoMesa.setText(i.getStringExtra("codigoMesa"));
-        sIdUsuario = i.getStringExtra("idusuario");
 
         salvar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,8 +47,8 @@ public class CadastrarMesas extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Nenhum campo deve estar vazio.", Toast.LENGTH_LONG).show();
                     } else {
                         url = "http://apppedglace.xyz/login/cadastro/mesas/novaMesa.php";
-                        parametros = "usuario=" + sIdUsuario + "&codigoMesa=" + codigo + "&capacidade=" + capacidadePessoas;
-                        new NovoPedidoActivity.SolicitaDados().execute(url);
+                        parametros = "&codigoMesa=" + codigo + "&capacidade=" + capacidadePessoas;
+                        new CadastrarMesas.SolicitaDados().execute(url);
                     }
                 } else {
                     Toast.makeText(getApplicationContext(), "Você não está conectado à rede", Toast.LENGTH_LONG).show();
@@ -78,13 +72,12 @@ public class CadastrarMesas extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String resultado) {
-            if(resultado.contains("pedido_ok")) {
-                Toast.makeText(getApplicationContext(), "Pedido realizado. [Novo Pedido]", Toast.LENGTH_LONG).show();
-                Intent i = new Intent(NovoPedidoActivity.this, MeusPedidosActivity.class);
-                i.putExtra("idusuario", sIdUsuario);
+            if(resultado.contains("cadastro_ok")) {
+                Toast.makeText(getApplicationContext(), "Cadastro da mesa realizado. [Novo Cadastro]", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(CadastrarMesas.this, CadastrarMesas.class);
                 startActivity(i);
             } else {
-                Toast.makeText(getApplicationContext(), "Erro ao inserir pedido.", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Erro ao inserir mesa.", Toast.LENGTH_LONG).show();
             }
         }
     }
