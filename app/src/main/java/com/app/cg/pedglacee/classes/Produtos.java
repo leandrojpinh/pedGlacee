@@ -7,13 +7,13 @@ import java.util.ArrayList;
  * Created by Adriano on 15/06/2017.
  */
 
-public class Refeicao extends _Default {
+public class Produtos extends _Default {
     private int id;
     private String descricao;
     private String tipoProduto;
     private double valor;
 
-    public Refeicao(){
+    public Produtos(){
         super();
         this.id = -1;
         this.descricao = "";
@@ -21,14 +21,14 @@ public class Refeicao extends _Default {
         this.valor = 0;
     }
 
-    public ArrayList<Refeicao> getList(){
+    public ArrayList<Produtos> getList(){
         DB db = new DB();
-        ArrayList<Refeicao> lista = new ArrayList<>();
+        ArrayList<Produtos> lista = new ArrayList<>();
         try {
             ResultSet resultSet = db.select("SELECT * FROM refeicao");
             if(resultSet != null){
                 while(resultSet .next()){
-                    Refeicao obj = new Refeicao();
+                    Produtos obj = new Produtos();
                     obj.setId(resultSet.getInt("id"));
                     obj.setDescricao(resultSet.getString("descricao"));
                     obj.setTipoProduto(resultSet.getString("tipoproduto"));

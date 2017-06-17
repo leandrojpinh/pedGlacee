@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.app.cg.pedglacee.CadastrarMesas"
+    android:background="@color/colorBackground">
+
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etCodMesa"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/etCodMesa"
+        android:layout_marginTop="68dp"
+        android:text="Codigo da Mesa"
+        android:textColor="@android:color/holo_red_dark"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="34dp" />
+
+    <EditText
+        android:id="@+id/etCodMesa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView5"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:ems="10"
+        android:hint="Digite Aqui..."
+        android:inputType="number"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="51dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etCodMesa"
+        android:layout_alignStart="@+id/etCodMesa"
+        android:layout_below="@+id/etCodMesa"
+        android:layout_marginTop="39dp"
+        android:text="Capacidade"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <EditText
+        android:id="@+id/etCapacidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView6"
+        android:layout_alignStart="@+id/textView6"
+        android:layout_below="@+id/textView6"
+        android:ems="10"
+        android:hint="Digite Aqui..."
+        android:inputType="number"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray" />
+
+    <Button
+        android:id="@+id/btSalvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etCapacidade"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:layout_marginTop="43dp"
+        android:layout_toLeftOf="@+id/btLimpar"
+        android:layout_toStartOf="@+id/btLimpar"
+        android:background="@android:color/holo_red_dark"
+        android:text="Salvar"
+        android:onClick="salvar"/>
+
+    <Button
+        android:id="@+id/btLimpar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btSalvar"
+        android:layout_alignBottom="@+id/btSalvar"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="17dp"
+        android:layout_marginRight="17dp"
+        android:background="@android:color/holo_red_dark"
+        android:text="Limpar"
+        android:onClick="limparCampo"/>
+
+</RelativeLayout>
