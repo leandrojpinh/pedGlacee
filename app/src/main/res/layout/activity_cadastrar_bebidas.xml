@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.app.cg.pedglacee.CadastrarBebidas"
+    android:background="@color/colorBackground">
+
+    <EditText
+        android:id="@+id/etDescricaoBebida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignStart="@+id/textView"
+        android:layout_below="@+id/textView"
+        android:backgroundTint="@android:color/darker_gray"
+        android:ems="10"
+        android:hint="Digite aqui..."
+        android:inputType="textPersonName"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
+        android:textCursorDrawable="@android:color/black" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="28dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="44dp"
+        android:text="@string/tvDescricao"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvValor"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="24sp"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/etDescricaoBebida"
+        android:layout_alignLeft="@+id/etDescricaoBebida"
+        android:layout_alignStart="@+id/etDescricaoBebida" />
+
+    <EditText
+        android:id="@+id/etValorBebida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_below="@+id/textView3"
+        android:backgroundTint="@android:color/darker_gray"
+        android:ems="10"
+        android:hint="Digite aqui..."
+        android:inputType="numberDecimal"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray" />
+
+    <Button
+        android:id="@+id/btAdicionarBebidas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etValor"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="42dp"
+        android:layout_toLeftOf="@+id/btLimpar"
+        android:layout_toStartOf="@+id/btLimpar"
+        android:background="@android:color/holo_red_dark"
+        android:backgroundTintMode="src_atop"
+        android:elevation="9dp"
+        android:text="@string/btAdicionar"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btLimpar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btAdicionarBebidas"
+        android:layout_alignBottom="@+id/btAdicionarBebidas"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@android:color/holo_red_dark"
+        android:text="@string/btLimpar"
+        android:textSize="14sp" />
+
+</RelativeLayout>

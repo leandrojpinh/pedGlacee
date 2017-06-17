@@ -11,8 +11,8 @@ import com.app.cg.pedglacee.adaptadores.MenuCadastroAdapter;
 
 public class CadastrosActivity extends AppCompatActivity {
 
-    private String[] lDesc = {"Produtos", "Mesa"};
-    private int [] lImgs = {R.drawable.ic_add, R.drawable.ic_action_name};
+    private String[] lDesc = {"Refeições","Bebidas", "Mesa"};
+    private int [] lImgs = {R.drawable.ic_add,R.drawable.ic_add, R.drawable.ic_action_name};
     private ListView lvMenu;
     Intent i;
 
@@ -30,10 +30,14 @@ public class CadastrosActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
-                        i = new Intent(getApplicationContext(), CadastroProdutos.class);
+                        i = new Intent(getApplicationContext(), CadastroRefeicao.class);
                         startActivity(i);
                         break;
                     case 1:
+                        i = new Intent(getApplicationContext(), CadastrarBebidas.class);
+                        startActivity(i);
+                        break;
+                    case 2:
                         i = new Intent(getApplicationContext(), CadastrarMesas.class);
                         startActivity(i);
                         break;
