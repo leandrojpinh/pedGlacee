@@ -212,7 +212,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_alignStart="@+id/txtTotalPed"
                     android:layout_below="@+id/txtTotalPed"
-                    android:text="RS 12,00"
+                    android:text="12"
                     android:textColor="@color/colorPrimary"
                     android:textSize="24sp" />
 

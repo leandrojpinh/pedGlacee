@@ -17,6 +17,8 @@ public class MenuActivity extends AppCompatActivity {
     private String[] lDesc = {"Novo Pedido", "Meus Pedidos", "Cadastros"};
     private int [] lImgs = {R.drawable.ic_add, R.drawable.ic_action_name,R.drawable.ic_add,};
     private ListView lvMenu;
+    private MenuGarcomAdapter mga;
+    private String sIdUser = "";
     Intent i;
 
     @Override
@@ -24,9 +26,13 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        lvMenu = (ListView) findViewById(R.id.lvMenu);
-        MenuGarcomAdapter mga = new MenuGarcomAdapter(this, lDesc, lImgs);
+        sIdUser = getIntent().getStringExtra("idusuario").toString();
+        InicializarComponentes();
 
+        //Setando valores na lista
+        mga = new MenuGarcomAdapter(this, lDesc, lImgs);
+
+        //Passando os valores para a lista
         lvMenu.setAdapter(mga);
 
         lvMenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -35,6 +41,7 @@ public class MenuActivity extends AppCompatActivity {
                 switch (position) {
                     case 0:
                         i = new Intent(getApplicationContext(), MesasActivity.class);
+                        i.putExtra("idusuario", sIdUser);
                         startActivity(i);
                         break;
                     case 1:
@@ -50,5 +57,9 @@ public class MenuActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void InicializarComponentes() {
+        lvMenu = (ListView) findViewById(R.id.lvMenu);
     }
 }
