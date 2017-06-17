@@ -112,5 +112,6 @@ public class NovoPedidoActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         finish();
+
     }
 }

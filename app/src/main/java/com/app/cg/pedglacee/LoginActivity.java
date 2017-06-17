@@ -19,9 +19,7 @@ public class LoginActivity extends AppCompatActivity { //implements LoaderCallba
 
     private EditText edtLogin, edtSenha;
     private Button btnLogar;
-
     String url = "", parametros = "";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,9 +71,8 @@ public class LoginActivity extends AppCompatActivity { //implements LoaderCallba
         protected void onPostExecute(String resultado) {
             if(resultado.contains("login_ok")) {
                 String dados[] = resultado.split(",");
-                Intent i = new Intent(LoginActivity.this, NovoPedidoActivity.class);
+                Intent i = new Intent(LoginActivity.this, MenuActivity.class);
                 i.putExtra("idusuario", dados[1]+"");
-                i.putExtra("idmesa", 1+"");
                 startActivity(i);
             } else {
                 Toast.makeText(getApplicationContext(), "Usuário ou Senha estão incorretos.", Toast.LENGTH_LONG).show();

@@ -14,7 +14,7 @@
 
 
     <!-- Strings related to login -->
-    <string name="prompt_usuario">Usuário</string>
+    <string name="prompt_usuario">Login</string>
     <string name="prompt_senha">Senha</string>
     <string name="btnEntrar">Entrar</string>
     <string name="action_sign_in_short">Sign in</string>
