@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">pedGlacee</string>
     <!-- Labels do login -->
-    <string name="atv_Login">Autenticação</string>
-    <string name="atv_Menu">Menu</string>
-    <string name="atv_Mesas">Mesas</string>
+    <string name="atv_login">Autenticação</string>
+    <string name="atv_menu">Menu</string>
+    <string name="atv_mesas">Mesas</string>
+    <string name="atv_novo_pedido">Novo Pedido</string>
+    <string name="atv_meus_pedidos">Meus Pedidos</string>
+    <string name="atv_comanda">Comanda</string>
 
     <!-- Labels Menu garçom -->
     <string name="txt_novo_pedido">Novo Pedido</string>
@@ -11,7 +14,7 @@
 
 
     <!-- Strings related to login -->
-    <string name="prompt_usuario">Usuário</string>
+    <string name="prompt_usuario">Login</string>
     <string name="prompt_senha">Senha</string>
     <string name="btnEntrar">Entrar</string>
     <string name="action_sign_in_short">Sign in</string>
@@ -22,4 +25,22 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <string-array name="pratos">
+        <item>Assado de Panela</item>
+        <item>Moqueca de arraia</item>
+        <item>Frango ao molho</item>
+        <item>Cupim ao forno</item>
+        <item>Bife ao molho</item>
+    </string-array>
+
+    <string-array name="sucos">
+        <item>Nenhum</item>
+        <item>Acerola</item>
+        <item>Abacaxi</item>
+        <item>Morango</item>
+        <item>Cajá</item>
+        <item>Limão</item>
+    </string-array>
+
 </resources>

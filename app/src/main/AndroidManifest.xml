@@ -3,9 +3,6 @@
     package="com.app.cg.pedglacee">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -16,7 +13,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".LoginActivity"
-            android:label="@string/atv_Login">
+            android:label="@string/atv_login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,18 +22,22 @@
         </activity>
         <activity
             android:name=".MenuActivity"
-            android:label="@string/atv_Menu">
-            <!--<intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:label="@string/atv_menu">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
         </activity>
         <activity
             android:name=".MesasActivity"
-            android:label="@string/atv_Mesas">
-
-        </activity>
+            android:label="@string/atv_mesas" />
+        <activity
+            android:name=".NovoPedidoActivity"
+            android:label="@string/atv_novo_pedido" />
+        <activity
+            android:name=".MeusPedidosActivity"
+            android:label="@string/atv_meus_pedidos" />
+        <activity android:name=".DetalhePedidoActivity"
+            android:label="@string/atv_comanda"></activity>
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

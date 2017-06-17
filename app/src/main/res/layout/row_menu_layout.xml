@@ -30,15 +30,14 @@
 
             <ImageView
                 android:id="@+id/imgMenu"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="20dp"
-                android:paddingTop="20dp"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_launcher_round"
                 android:layout_alignParentTop="true"
                 android:layout_toLeftOf="@+id/txtMenu"
-                android:layout_toStartOf="@+id/txtMenu" />
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp"
+                android:scaleType="center"
+                app:srcCompat="@mipmap/ic_launcher_round" />
         </RelativeLayout>
 
     </LinearLayout>
