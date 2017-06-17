@@ -47,7 +47,7 @@ public class CadastrarMesas extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Nenhum campo deve estar vazio.", Toast.LENGTH_LONG).show();
                     } else {
                         url = "http://apppedglace.xyz/login/cadastro/mesas/novaMesa.php";
-                        parametros = "&codigoMesa=" + codigo + "&capacidade=" + capacidadePessoas;
+                        parametros = "&codigo=" + codigo + "&qtd_lugares=" + capacidadePessoas;
                         new CadastrarMesas.SolicitaDados().execute(url);
                     }
                 } else {
@@ -74,7 +74,7 @@ public class CadastrarMesas extends AppCompatActivity {
         protected void onPostExecute(String resultado) {
             if(resultado.contains("cadastro_ok")) {
                 Toast.makeText(getApplicationContext(), "Cadastro da mesa realizado. [Novo Cadastro]", Toast.LENGTH_LONG).show();
-                Intent i = new Intent(CadastrarMesas.this, CadastrarMesas.class);
+                Intent i = new Intent(CadastrarMesas.this, CadastrosActivity.class);
                 startActivity(i);
             } else {
                 Toast.makeText(getApplicationContext(), "Erro ao inserir mesa.", Toast.LENGTH_LONG).show();
